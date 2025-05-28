@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Contact form</title>
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+  <div class="contact-us">
+    <h1 class="contact-us-title">Contact us</h1>
+    <form class="contact-us-form" id="regForm" action="/registration" method="post" novalidate data-js-form>
+      <div class="contact-us-body">
+        <div class="contact-us-field">
+          <label class="field-label" for="firstName">
+            First Name
+            <span class="field-required-star" aria-hidden="true">*</span>
+          </label>
+          <input 
+            class="field-input" 
+            id="firstName" 
+            placeholder="Lorelei" 
+            minlength="3" 
+            maxlength="12"
+            aria-errormessage="firstName-errors" 
+            required
+          />
+          <span class="field__errors" id="firstName-errors" data-js-form-field-errors></span>
+        </div>
+        <div class="contact-us-field">
+          <label class="field-label" for="lastName">
+            Last Name
+            <span class="field-required-star" aria-hidden="true">*</span>
+          </label>
+          <input 
+            class="field-input" 
+            id="lastName" 
+            placeholder="Watterson" 
+            required minlength="2" 
+            maxlength="12"
+            aria-errormessage="lastName-errors" 
+            required
+          />
+          <span class="field__errors" id="lastName-errors" data-js-form-field-errors></span>
+        </div>
+        <div class="contact-us-field--wide">
+          <label class="field-label" for="email">
+            Email Adress
+            <span class="field-required-star" aria-hidden="true">*</span>
+          </label>
+          <input 
+            class="field-input" 
+            id="email" 
+            placeholder="email@example.com" 
+            type="email"
+            pattern="^[^@\\s]+@[^@\\s]+$"
+            title="Please enter a valid email address with exactly one '@' symbol and no more than 50 characters in length."
+            aria-errormessage="email-errors"
+            required 
+            maxlength="50"
+          />
+          <span class="field__errors" id="email-errors" data-js-form-field-errors></span>
+        </div>
+        <fieldset class="request-types">
+          <legend class="radios-title">Query type
+            <span class="field-required-star" aria-hidden="true">*</span>
+          </legend>
+          <label class="radios-item">
+            <input 
+              class="radio-input" 
+              name="request-type" 
+              type="radio" 
+              value="General Enquiry"
+              aria-errormessage="request-type-errors"
+              required
+             />
+            <span class="radio-label">General Enquiry</span>
+          </label>
+          <label class="radios-item">
+            <input 
+              class="radio-input" 
+              name="request-type" 
+              type="radio" 
+              value="Support Request" 
+              aria-errormessage="request-type-errors"
+              required
+            />
+            <span class="radio-label">Support Request</span>
+          </label>
+          <span class="field__errors" id="request-type-errors" data-js-form-field-errors></span>
+        </fieldset>
+        <div class="contact-us-field--wide">
+          <label class="field-label" for="message">
+            Message
+            <span class="field-required-star" aria-hidden="true">*</span>
+          </label>
+          <textarea 
+            class="field-input textarea" 
+            id="message" 
+            name="message"
+            placeholder="Hi! I have an idea..." 
+            required
+          ></textarea>
+          <span class="field__errors" id="message-errors" data-js-form-field-errors></span>
+        </div>
+      </div>
+      <div class="contact-us-field--wide">
+        <div class="contact-us-field-actions">
+          <div class="contact-us-field-agreement">
+            <label class="checkbox">
+              <input 
+                type="checkbox" 
+                class="input visually-hidden" 
+                id="agreement" 
+                name="agreement" 
+                type="checkbox"
+                required 
+                aria-errormessage="agreement-errors" 
+              />
+              <span class="checkbox-input"></span>
+              <span class="checkbox-label"> I hereby consent to being contacted by the team
+                <span class="field-required-star" aria-hidden="true">*</span>
+              </span>
+            </label>
+            <span class="field__errors" id="agreement-errors" data-js-form-field-errors></span>
+          </div>
+          <button class="contact-us-field-submit-button" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id="form-success" class="form-success-message visually-hidden">
+    <h2><span class="form-success-check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" fill="none" viewBox="0 0 20 21"><path fill="#fff" d="M14.28 7.72a.748.748 0 0 1 0 1.06l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.75.75 0 0 1 1.06 0Zm5.47 2.78A9.75 9.75 0 1 1 10 .75a9.76 9.76 0 0 1 9.75 9.75Zm-1.5 0A8.25 8.25 0 1 0 10 18.75a8.26 8.26 0 0 0 8.25-8.25Z"/></svg></span>Message Sent!</h2>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+  
+</body>
+</html>
